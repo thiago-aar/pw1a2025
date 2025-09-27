@@ -5,3 +5,23 @@
     background-color: #ffff00;
 
 }
+.card-star{
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.card-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.card-card-description{
+    display: flex;
+    flex-direction: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
