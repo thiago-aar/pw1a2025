@@ -2,7 +2,7 @@
     border: 2px solid #cccccc;
     width: 268px;
     height: 474px;
-    background-color: #ffff00;
+    
 
 }
 .card-star{
@@ -11,6 +11,7 @@
     gap: 10px;
     margin-top: 10px;
     margin-right: 10px;
+    color: orange;
 }
 .card-image{
     display: flex;
@@ -20,24 +21,60 @@
 }
 .card-description {
     display: flex;
-    justify-content: center;
-    margin: top 10px;
-    margin-left: 10px;
+    text-align: left;
+    margin-top:  10%;
+    margin-left: 10px ;
+    
 }
 .card-desconto{
     display: flex;
-    justify-content: space-around ;
+    justify-content: space-between;
     margin: top 10px;
+    margin-left: 10px ;
+    margin-right: 10px;
+    text-align: left;
+    font-size: x-small;
    
 }
+.riscado{
+    text-decoration: line-through;
+}
+
 .card-price {
     display: flex;
     justify-content: start ;
-    margin: top 10px;
     margin-left: 10px;
+    
     color: orange;
 }
-primeira{
+.card-pricee{
     background-color: orange;
+    font-size:x-small;
     color: white;
+    border-radius: 20px;
+    height: 10px;
+    padding: 5px;
+    
+}
+.card-parcelamento{
+    margin: 10px;
+}
+.card-buttom-buy{
+    background-color: white;
+  border-radius: 20px;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  
+}
+.card-buttom-buy{border: 2px solid orange;}
+.card-buttom-buy:hover {
+    background-color: orange;color: white;
 }
