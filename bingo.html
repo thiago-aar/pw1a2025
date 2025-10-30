@@ -11,7 +11,7 @@
             height: 100%;
             background-color: #666666;
             font-family:Georgia, 'Times New Roman', Times, serif;
-            display: flex;
+            /*display: flex;*/
             justify-content: center;
             align-items: center;
         
@@ -56,41 +56,121 @@
         </thead>
         <tbody>
             <tr>
-                <td>03</td> <!--coluna b-->
-                <td>22</td> <!--coluna i-->
-                <td>40</td> <!--coluna n-->
-                <td>57</td> <!--coluna g-->
-                <td>73</td> <!--coluna o-->
+                <td onclick="marcar(this)" >03</td> <!--coluna b-->
+                <td onclick="marcar(this)">22</td> <!--coluna i-->
+                <td onclick="marcar(this)">40</td> <!--coluna n-->
+                <td onclick="marcar(this)">57</td> <!--coluna g-->
+                <td onclick="marcar(this)">73</td> <!--coluna o-->
             </tr>
             <tr>
-                <td>06</td> <!--coluna b-->
-                <td>25</td> <!--coluna i-->
-                <td>43</td> <!--coluna n-->
-                <td>63</td> <!--coluna g-->
-                <td>75</td> <!--coluna o-->
+                <td onclick="marcar(this)">06</td> <!--coluna b-->
+                <td onclick="marcar(this)">25</td> <!--coluna i-->
+                <td onclick="marcar(this)">43</td> <!--coluna n-->
+                <td onclick="marcar(this)">63</td> <!--coluna g-->
+                <td onclick="marcar(this)">75</td> <!--coluna o-->
             </tr>
             <tr>
-                <td>09</td> <!--coluna b-->
-                <td>25</td> <!--coluna i-->
-                <td><img src="imagens/indio-removebg-preview.png" width="47px" height="66px"/></td> <!--coluna n-->
-                <td>60</td> <!--coluna g-->
-                <td>75</td> <!--coluna o-->
+                <td onclick=" marcar(this)">09</td> <!--coluna b-->
+                <td onclick=" marcar(this)">25</td> <!--coluna i-->
+                <td onclick=" marcar(this)"><img src="imagens/indio-removebg-preview.png" width="47px" height="66px"/></td> <!--coluna n-->
+                <td onclick=" marcar(this)">60</td> <!--coluna g-->
+                <td onclick=" marcar(this)">75</td> <!--coluna o-->
             </tr>
             <tr>
-                <td>10</td> <!--coluna b-->
-                <td>25</td> <!--coluna i-->
-                <td>41</td> <!--coluna n-->
-                <td>57</td> <!--coluna g-->
-                <td>61</td> <!--coluna o-->
+                <td onclick=" marcar(this)">10</td> <!--coluna b-->
+                <td onclick=" marcar(this)">25</td> <!--coluna i-->
+                <td onclick=" marcar(this)">41</td> <!--coluna n-->
+                <td onclick=" marcar(this)">57</td> <!--coluna g-->
+                <td onclick=" marcar(this)">61</td> <!--coluna o-->
             </tr>
             <tr>
-                <td>15</td> <!--coluna b-->
-                <td>29</td> <!--coluna i-->
-                <td>38</td> <!--coluna n-->
-                <td>50</td> <!--coluna g-->
-                <td>71</td> <!--coluna o-->
+                <td onclick=" marcar(this)">15</td> <!--coluna b-->
+                <td onclick=" marcar(this)">29</td> <!--coluna i-->
+                <td onclick=" marcar(this)">38</td> <!--coluna n-->
+                <td onclick=" marcar(this)">50</td> <!--coluna g-->
+                <td onclick=" marcar(this)">71</td> <!--coluna o-->
             </tr>
         </tbody>
     </table>
-</body>
+    <script>
+        var B = PreencherLista ( 1,15)        
+        var I = PreencherLista ( 16,30)
+        var N = PreencherLista ( 31,45)
+        var G = PreencherLista ( 46,60)
+        var O = PreencherLista (61,75)
+        var SORTEIO = PreencherLista (1,75)
+
+        function PreencherLista (inicial, final)
+        {
+            var ListaREtorno = []
+            for(var i = inicial ; i <= final; i++)
+            
+        {
+            ListaREtorno.push(i)  
+        }
+        return ListaREtorno
+        }
+ 
+        function ParOuImpar (numero)
+        {
+            if (numero % 2 ==0 )
+            return par
+            else {
+            return impar
+                }
+        }
+       function exibir (Lista) {
+        document.write (Lista+"<br>")
+        
+       }
+       exibir(B)
+       exibir(I)
+       exibir(N)
+       exibir(G)
+       exibir(O)
+       exibir(SORTEIO)
+
+       function exibirListadetalhada (Lista){
+        for (var i = 0; i< Lista.length; i++)
+       {
+        document.write ("<h1>"+Lista[i]+"</h1>")
+       }
+       }
+       exibirListadetalhada(B)
+       exibirListadetalhada(I)
+       exibirListadetalhada(N)
+       exibirListadetalhada(G)
+       exibirListadetalhada(O)
+       exibirListadetalhada(SORTEIO)
+
+       function marcar (elementoClicado)
+       {
+        /* (elementoclicado.innerText)*/
+        elementoClicado.innerText = numeroaleatorio ()
+        
+       /* if (elementoClicado.style.backgroundColor == "red")
+       {
+        elementoClicado.style.backgroundColor = "yellow"
+       } else {
+        elementoClicado.style.backgroundColor = "red"
+       }*/
+       }
+
+
+       function numeroaleatorio(min, max)
+       {
+        var numero =Math.random() * max
+        numero= Math.floor(numero)
+        if (numero >= min){
+            return numero
+        } else {
+            return numeroaleatorio (min, max)
+        }
+        
+       }
+       
+    </script>
+    </body>
 </html>
+
+
