@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartela de bingo</title>
+    <style>
+        body, html{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-color: #666666;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            /*display: flex;*/
+            justify-content: center;
+            align-items: center;
+        
+        
+        }
+        th {
+            font-size: 50px;
+                padding: 10px;
+        }
+            td {
+                font-size: 50px;
+                border: 1px solid rgb(0,0,0);
+                padding: 10px;
+                border-radius: 5px;
+                text-align: center;
+            }
+            table {
+               
+                background-color: #ffffff;
+                background-color: #ffff00;
+                padding-bottom: 50px;
+                padding-left: 25px;
+                padding-right: 25px;
+                
+            }
+           
+    </style>
+   
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th onclick="gerarNumeroAleatorio(this)">B</th>
+                <th onclick="gerarNumeroAleatorio(this)">I</th>
+                <th onclick="gerarNumeroAleatorio(this)">N</th>
+                <th onclick="gerarNumeroAleatorio(this)">G</th>
+                <th onclick="gerarNumeroAleatorio(this)">O</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td onclick="marcar(this)"></td> <!--coluna b-->
+                <td onclick="marcar(this)"> </td> <!--coluna i-->
+                <td onclick="marcar(this)"></td> <!--coluna n-->
+                <td onclick="marcar(this)"></td> <!--coluna g-->
+                <td onclick="marcar(this)"></td> <!--coluna o-->
+            </tr>
+            <tr>
+                <td onclick="marcar(this)"></td> <!--coluna b-->
+                <td onclick="marcar(this)"></td> <!--coluna i-->
+                <td onclick="marcar(this)"></td> <!--coluna n-->
+                <td onclick="marcar(this)"></td> <!--coluna g-->
+                <td onclick="marcar(this)"></td> <!--coluna o-->
+            </tr>
+            <tr>
+                <td onclick="marcar(this)"></td> <!--coluna b-->
+                <td onclick="marcar(this)"></td> <!--coluna i-->
+                <td onclick="g(this)"><img src="imagens/indio-removebg-preview.png" width="47px" height="66px"/></td> <!--coluna n-->
+                <td onclick="marcar(this)"></td> <!--coluna g-->
+                <td onclick="marcar(this)"></td> <!--coluna o-->
+            </tr>
+            <tr>
+                <td onclick="marcar(this)"></td>  <!--coluna b-->
+                <td onclick="marcar(this)"></td> <!--coluna i-->
+                <td onclick="marcar(this)"></td> <!--coluna n-->
+                <td onclick="marcar(this)"></td> <!--coluna g-->
+                <td onclick="marcar(this)"></td> <!--coluna o-->
+            </tr>
+            <tr>
+                <td onclick="marcar(this)"></td> <!--coluna b-->
+                <td onclick="marcar(this)"></td> <!--coluna i-->
+                <td onclick="marcar(this)"></td> <!--coluna n-->
+                <td onclick="marcar(this)"></td> <!--coluna g-->
+                <td onclick="marcar(this)"></td> <!--coluna o-->
+            </tr>
+        </tbody>
+    </table> <script>
+        function NumeroAleatorio(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        
+        function gerarNumeroAleatorio(elementoClicado) {
+            let coluna = elementoClicado.innerText;
+            let numero;
+
+            switch (coluna) {
+                case "B": numero = NumeroAleatorio(1, 15); break;
+                case "I": numero = NumeroAleatorio(16, 30); break;
+                case "N": numero = NumeroAleatorio(31, 45); break;
+                case "G": numero = NumeroAleatorio(46, 60); break;
+                case "O": numero = NumeroAleatorio(61, 75); break;
+                default: numero = NumeroAleatorio(1, 75);
+            }
+
+            elementoClicado.innerText = numero;
+        }
+
+      
+        function marcar(elementoClicado) {
+            if (elementoClicado.style.backgroundColor === "red") {
+                elementoClicado.style.backgroundColor = "yellow";
+            } else {
+                elementoClicado.style.backgroundColor = "red";
+            }
+        }
+
+        
+        window.onload = function() {
+            const tbody = document.querySelector("tbody");
+            for (let i = 0; i < 5; i++) {
+                for (let j = 0; j < 5; j++) {
+                    if (i === 2 && j === 2) continue; 
+                    let td = tbody.rows[i].cells[j];
+                    let colIndex = j;
+                    switch (colIndex) {
+                        case 0: td.innerText = NumeroAleatorio(1, 15); break;
+                        case 1: td.innerText = NumeroAleatorio(16, 30); break;
+                        case 2: td.innerText = NumeroAleatorio(31, 45); break;
+                        case 3: td.innerText = NumeroAleatorio(46, 60); break;
+                        case 4: td.innerText = NumeroAleatorio(61, 75); break;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
