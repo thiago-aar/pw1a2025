@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>One Piece API Test</title>
+</head>
+<body>
+  <h1>One Piece Characters (API Test)</h1>
+  <button onclick="loadCharacters()">Carregar personagens</button>
+
+  <pre id="output"></pre>
+
+  <script>
+    async function loadCharacters() {
+      const output = document.getElementById("output");
+      output.textContent = "Carregando...";
+
+      try {
+        const response = await fetch("https://api.api-onepiece.com/v2/characters/en");
+
+        if (!response.ok) {
+          output.textContent = "Erro: " + response.status;
+          return;
+        }
+
+        const data = await response.json();
+        output.textContent = JSON.stringify(data, null, 2);
+      } catch (error) {
+        output.textContent = "Erro ao conectar:\n" + error;
+      }
+    }
+  </script>
+</body>
+</html>
