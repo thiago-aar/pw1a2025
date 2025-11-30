@@ -88,7 +88,7 @@ font-size: clamp(8px, 5vw, 1rem);
 font-weight: 600;
 color: white;
 background-color: #444;
-box-shadow: 2px 3px 0 #222, 4px 6px 0 #000;
+box-shadow: 3px 3px 0 #222, 6px 6px 0 #000;
 display: flex;
 justify-content: space-around;
 align-items: center;
@@ -108,5 +108,44 @@ text-align: center;
 
 .button:active {
   box-shadow: inset -4px 4px 0 #222;
+  transform: translate(3px, 3px);
   font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+
+  .pokemon__image {
+    bottom: 62%;
+    left: 50%;
+    transform: translate(-60%, 10%);
+    height: 22%;
+  }
+
+  .pokemon__data {
+    top: 67%;
+    right: 22%;
+    font-size: 16px;
+  }
+
+  .form {
+    width: 80%;
+    top: 76%;
+    left: 10%;
+  }
+
+  .buttons {
+    bottom: 42%;
+    left: 50%;
+    width: 85%;
+    transform: translate(-50%, 0);
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .button {
+    width: 55px;
+    height: 55px;
+    font-size: 0.75rem;
+    box-shadow: 2px 2px 0 #222, 4px 4px 0 #000;
+  }
 }
