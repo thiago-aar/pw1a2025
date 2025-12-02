@@ -1,0 +1,37 @@
+media (max-width: 480px) {
+
+  .pokemon__image {
+    bottom: 62%;
+    left: 50%;
+    transform: translate(-60%, 10%);
+    height: 22%;
+  }
+
+  .pokemon__data {
+    top: 67%;
+    right: 22%;
+    font-size: 16px;
+  }
+
+  .form {
+    width: 80%;
+    top: 76%;
+    left: 10%;
+  }
+
+  .buttons {
+    bottom: 42%;
+    left: 50%;
+    width: 85%;
+    transform: translate(-50%, 0);
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .button {
+    width: 55px;
+    height: 55px;
+    font-size: 0.75rem;
+    box-shadow: 2px 2px 0 #222, 4px 4px 0 #000;
+  }
+}
