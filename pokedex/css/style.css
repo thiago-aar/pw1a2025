@@ -43,7 +43,7 @@ main {
 }
 
 .pokemon__name {
-  color: #3a444d;
+  color: #06233d;
   text-transform: capitalize;
 }
 
@@ -69,9 +69,9 @@ main {
 .buttons {
   
   position: absolute;
-  bottom: 53%;
+  bottom: 54%;
   left: 58%;
-  width: 73%;
+  width: 71%;
   transform: translate(-57%, 0);
   display: flex;
   gap: 20px;
@@ -79,8 +79,8 @@ main {
 }
 
 .button{
-width: 90px;
-height: 77px;
+width: 77px;
+height: 70px;
 border-radius: 50%; 
 padding: 2%;
 border: 2px solid #000;
